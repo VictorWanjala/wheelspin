@@ -1,0 +1,143 @@
+/* General styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* Game container */
+#game-container {
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffdf00;
+}
+
+/* Description */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Wheel container */
+#wheel-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+}
+
+/* Wheel */
+#wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        #ff0000 0deg 36deg,
+        #00ff00 36deg 72deg,
+        #0000ff 72deg 108deg,
+        #ff00ff 108deg 144deg,
+        #ffff00 144deg 180deg,
+        #00ffff 180deg 216deg,
+        #ff8000 216deg 252deg,
+        #8000ff 252deg 288deg,
+        #0080ff 288deg 324deg,
+        #80ff00 324deg 360deg
+    );
+    position: absolute;
+    transform-origin: center;
+    transition: transform 4s ease-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover effect for the wheel */
+#wheel:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    transform: scale(1.05);
+}
+
+/* Button and input */
+button, input {
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Button styles */
+button {
+    background-color: #28a745;
+    color: white;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+
+/* Input styles */
+input {
+    border: 1px solid #ddd;
+    padding: 12px;
+    width: 80px;
+    text-align: center;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Result display */
+#result {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffdf00;
+}
+
+/* Animations */
+.mystery-prize-animation {
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.losing-outcome-animation {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Keyframes for animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
